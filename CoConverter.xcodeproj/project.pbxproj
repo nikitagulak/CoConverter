@@ -15,6 +15,7 @@
 		018B7030227E158A00A79E8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 018B702E227E158A00A79E8C /* LaunchScreen.storyboard */; };
 		018B703F227E3EB600A79E8C /* AddCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B703E227E3EB600A79E8C /* AddCurrencyController.swift */; };
 		018B7041227E40EC00A79E8C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B7040227E40EC00A79E8C /* Currency.swift */; };
+		018B7043227F70E500A79E8C /* AddCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B7042227F70E500A79E8C /* AddCurrencyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		018B7031227E158A00A79E8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		018B703E227E3EB600A79E8C /* AddCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyController.swift; sourceTree = "<group>"; };
 		018B7040227E40EC00A79E8C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		018B7042227F70E500A79E8C /* AddCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCurrencyCell.swift; path = CoConverter/Controller/AddCurrencyCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 		018B7039227E15DE00A79E8C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				018B7042227F70E500A79E8C /* AddCurrencyCell.swift */,
 				018B7024227E158A00A79E8C /* ViewController.swift */,
 				018B703E227E3EB600A79E8C /* AddCurrencyController.swift */,
 			);
@@ -178,6 +181,7 @@
 			files = (
 				018B702B227E158A00A79E8C /* CoConverter.xcdatamodeld in Sources */,
 				018B7041227E40EC00A79E8C /* Currency.swift in Sources */,
+				018B7043227F70E500A79E8C /* AddCurrencyCell.swift in Sources */,
 				018B7025227E158A00A79E8C /* ViewController.swift in Sources */,
 				018B703F227E3EB600A79E8C /* AddCurrencyController.swift in Sources */,
 				018B7023227E158A00A79E8C /* AppDelegate.swift in Sources */,
