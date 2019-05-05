@@ -16,6 +16,7 @@
 		018B703F227E3EB600A79E8C /* AddCurrencyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B703E227E3EB600A79E8C /* AddCurrencyController.swift */; };
 		018B7041227E40EC00A79E8C /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B7040227E40EC00A79E8C /* Currency.swift */; };
 		018B7043227F70E500A79E8C /* AddCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B7042227F70E500A79E8C /* AddCurrencyCell.swift */; };
+		018B7045227F9BE000A79E8C /* FavoriteCurrencyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 018B7044227F9BE000A79E8C /* FavoriteCurrencyCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		018B703E227E3EB600A79E8C /* AddCurrencyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCurrencyController.swift; sourceTree = "<group>"; };
 		018B7040227E40EC00A79E8C /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		018B7042227F70E500A79E8C /* AddCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCurrencyCell.swift; path = CoConverter/Controller/AddCurrencyCell.swift; sourceTree = SOURCE_ROOT; };
+		018B7044227F9BE000A79E8C /* FavoriteCurrencyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoriteCurrencyCell.swift; path = CoConverter/Controller/FavoriteCurrencyCell.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +84,10 @@
 		018B7039227E15DE00A79E8C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				018B7042227F70E500A79E8C /* AddCurrencyCell.swift */,
 				018B7024227E158A00A79E8C /* ViewController.swift */,
+				018B7044227F9BE000A79E8C /* FavoriteCurrencyCell.swift */,
 				018B703E227E3EB600A79E8C /* AddCurrencyController.swift */,
+				018B7042227F70E500A79E8C /* AddCurrencyCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				018B7045227F9BE000A79E8C /* FavoriteCurrencyCell.swift in Sources */,
 				018B702B227E158A00A79E8C /* CoConverter.xcdatamodeld in Sources */,
 				018B7041227E40EC00A79E8C /* Currency.swift in Sources */,
 				018B7043227F70E500A79E8C /* AddCurrencyCell.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddCurrencyController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -30,6 +31,26 @@ class AddCurrencyController: UIViewController, UITableViewDataSource, UITableVie
         cell.codeLabel.text = allCurrencies[indexPath.row].code
         cell.nameLabel.text = allCurrencies[indexPath.row].name
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "FavoriteCurrency", in: context)
+        let newFavoriteCurrency = NSManagedObject(entity: entity!, insertInto: context)
+        newFavoriteCurrency.setValue(allCurrencies[indexPath.row].flag, forKey: "flag")
+        newFavoriteCurrency.setValue(allCurrencies[indexPath.row].code, forKey: "code")
+        newFavoriteCurrency.setValue(allCurrencies[indexPath.row].name, forKey: "name")
+        
+        do {
+            try context.save()
+        } catch {
+            print("Failed saving")
+        }
+        
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
