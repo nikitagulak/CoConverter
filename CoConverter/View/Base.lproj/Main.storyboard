@@ -59,7 +59,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="76567" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-aa-Dct">
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-aa-Dct">
                                                     <rect key="frame" x="139.5" y="10" width="219.5" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="orE-iG-otV"/>

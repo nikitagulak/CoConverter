@@ -14,9 +14,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        let launchedBefore = UserDefaults.standard.bool(forKey: "launchedBefore")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "FavoriteCurrency", in: context)
+        
+        func addDefaultFavoriteCurrency(flag: String, code: String, name: String) {
+            let object = NSManagedObject(entity: entity!, insertInto: context)
+            object.setValue(flag, forKey: "flag")
+            object.setValue(code, forKey: "code")
+            object.setValue(name, forKey: "name")
+            
+            do {
+                try context.save()
+            } catch {
+                print("Failed saving")
+            }
+        }
+        
+        if !launchedBefore  {
+            addDefaultFavoriteCurrency(flag: "🇺🇸", code: "USD", name: "United States Dollar")
+            addDefaultFavoriteCurrency(flag: "🇪🇺", code: "EUR", name: "Euro")
+            addDefaultFavoriteCurrency(flag: "🇬🇧", code: "GBP", name: "British Pound")
+            addDefaultFavoriteCurrency(flag: "🇦🇺", code: "AUD", name: "Australian Dollar")
+            UserDefaults.standard.set(true, forKey: "launchedBefore")
+        }
+        
         return true
     }
 
