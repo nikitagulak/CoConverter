@@ -14,6 +14,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchFavoriteCurrencies()
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        tap.cancelsTouchesInView = false
+        view.addGestureRecognizer(tap)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -32,16 +35,32 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = tableView.dequeueReusableCell(withIdentifier: "favoriteCurrencyCell", for: indexPath) as! FavoriteCurrencyCell
         cell.flagLabel.text = favoriteCurrencies[indexPath.row].flag
         cell.codeLabel.text = favoriteCurrencies[indexPath.row].code
-        cell.selectionStyle = .none
+//        cell.selectionStyle = .none
+        let selectedView = UIView()
+        selectedView.backgroundColor = #colorLiteral(red: 0.9137254902, green: 0.968627451, blue: 1, alpha: 1)
+        cell.selectedBackgroundView = selectedView
+        cell.input.isEnabled = false
+        
         return cell
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, nil) in
-            print("Delete button pressed")
             self.deleteFavoriteCurrency(index: indexPath.row)
         }
         return UISwipeActionsConfiguration(actions: [delete])
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath) as! FavoriteCurrencyCell
+        cell.input.isEnabled = true
+        cell.input.becomeFirstResponder()
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell = self.tableView.cellForRow(at: indexPath) as! FavoriteCurrencyCell
+        cell.input.isEnabled = false
+        tableView.reloadData()
     }
     
     func fetchFavoriteCurrencies() {
@@ -81,6 +100,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         fetchFavoriteCurrencies()
         tableView.reloadData()
+    }
+    
+    func downloadRates() {
+        
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
 }

@@ -59,16 +59,17 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-aa-Dct">
+                                                <textField opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n4t-aa-Dct">
                                                     <rect key="frame" x="139.5" y="10" width="219.5" height="60"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="60" id="orE-iG-otV"/>
                                                     </constraints>
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstItem="gUK-lU-j2j" firstAttribute="centerY" secondItem="ypK-iY-rIi" secondAttribute="centerY" id="CTn-dp-Hnu"/>
                                                 <constraint firstItem="n4t-aa-Dct" firstAttribute="leading" secondItem="VMN-EI-Q6e" secondAttribute="trailing" constant="16" id="FfE-qD-aNK"/>
@@ -79,9 +80,12 @@
                                                 <constraint firstAttribute="trailing" secondItem="n4t-aa-Dct" secondAttribute="trailing" constant="16" id="mFP-O2-EC6"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <gestureRecognizers/>
                                         <connections>
                                             <outlet property="codeLabel" destination="VMN-EI-Q6e" id="2GD-E7-6i9"/>
                                             <outlet property="flagLabel" destination="gUK-lU-j2j" id="M2n-no-u7k"/>
+                                            <outlet property="input" destination="n4t-aa-Dct" id="pG7-Qf-iu9"/>
+                                            <outlet property="view" destination="ypK-iY-rIi" id="4aq-x6-A4t"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -92,6 +96,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="AXl-SY-dfM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="52H-NB-9dy"/>
                             <constraint firstItem="YyT-5P-hnA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="28" id="AK3-05-YDE"/>

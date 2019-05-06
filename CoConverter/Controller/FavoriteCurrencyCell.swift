@@ -12,7 +12,6 @@ class FavoriteCurrencyCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -21,8 +20,10 @@ class FavoriteCurrencyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    @IBOutlet weak var view: UIView!
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var codeLabel: UILabel!
+    @IBOutlet weak var input: UITextField!
     
-
+    
 }
