@@ -67,6 +67,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                                    <connections>
+                                                        <action selector="didChangeInputValue:" destination="5Zy-ib-pCk" eventType="editingChanged" id="L4Q-kc-rbb"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <gestureRecognizers/>
@@ -186,7 +189,7 @@
                         <viewLayoutGuide key="safeArea" id="D9T-aj-QaP"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add currency" id="tRm-mX-1cs">
-                        <barButtonItem key="rightBarButtonItem" title="Cancel" style="plain" id="Wjw-5g-rvj">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Wjw-5g-rvj">
                             <connections>
                                 <action selector="cancelPressed:" destination="2R6-Hl-sQR" id="1DI-qG-mFU"/>
                             </connections>

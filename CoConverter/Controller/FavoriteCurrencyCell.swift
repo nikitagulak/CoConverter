@@ -25,5 +25,9 @@ class FavoriteCurrencyCell: UITableViewCell {
     @IBOutlet weak var codeLabel: UILabel!
     @IBOutlet weak var input: UITextField!
     
+    @IBAction func didChangeInputValue(_ sender: Any) {
+        
+    }
+    
     
 }

@@ -9,14 +9,19 @@
 import UIKit
 import CoreData
 
+var mainViewController: ViewController?
+
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        mainViewController = self
         fetchFavoriteCurrencies()
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
-        tap.cancelsTouchesInView = false
-        view.addGestureRecognizer(tap)
+        downloadRates()
+//        let tap = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+//        tap.cancelsTouchesInView = false
+//        view.addGestureRecognizer(tap)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -24,6 +29,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     var favoriteCurrencies = [Currency]()
+    var currencyRates = [String: Double]()
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -104,11 +110,37 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     func downloadRates() {
         
+        let api = "f6873f7857867b2ce0d3"
+        
+        var url = "https://free.currconv.com/api/v7/convert?q="
+        for element in favoriteCurrencies {
+            if element.code != favoriteCurrencies[0].code {
+                if element.code != favoriteCurrencies[favoriteCurrencies.count-1].code {
+                    url += "\(favoriteCurrencies[0].code)_\(element.code),"
+                } else {
+                    url += "\(favoriteCurrencies[0].code)_\(element.code)"
+                }
+            }
+        }
+        url += "&compact=ultra&apiKey="
+        url += api
+        print(url)
+        if let urlObj = URL(string: url) {
+            URLSession.shared.dataTask(with: urlObj) {(data, response, error) in
+                do {
+                    self.currencyRates = try JSONDecoder().decode([String:Double].self, from: data!)
+                    print(self.currencyRates)
+                } catch {
+                    print("Error of decoding JSON: \(error)")
+                }
+            }.resume()
+        }
     }
     
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
     
 }
 
